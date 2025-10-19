@@ -126,9 +126,12 @@ body {
 .call-to-action > h2,
 .call-to-action > p {
     margin: 0;
-    /* Keep text centered and full width so the button won't overlap */
+    /* Keep text centered and constrained so it doesn't grow into the button */
     flex: 0 1 auto;
-    width: 100%;
+    width: auto;
+    max-width: 760px;    /* limit line length for readability */
+    margin-left: auto;    /* center the text block */
+    margin-right: auto;
     text-align: center;
 }
 
@@ -147,6 +150,11 @@ body {
     padding: 10px 20px; /* Padding for button */
     text-decoration: none; /* Remove underline from link */
     border-radius: 5px; /* Rounded corners */
+    /* Use flexbox so the text is always centered horizontally and vertically */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /* Change button color on hover */
@@ -258,21 +266,24 @@ body {
 
     /* Keep CTA vertical on large screens as well (heading, paragraph, button)
        — this ensures the "Make a Difference" section stays stacked and
-       prevents horizontal overlap across layouts. We left-align text for
+       prevents horizontal overlap across layouts. We center-align text for
        readability on wide screens, but preserve vertical stacking. */
     .call-to-action {
         /* continue using column so items always stack */
         flex-direction: column;
-        align-items: flex-start; /* left-align children on large screens */
+        align-items: center; /* center children on large screens */
         gap: 18px;
     }
 
-    /* CTA text should remain left-aligned and not try to grow into the button */
+    /* CTA text should remain center-aligned and not try to grow into the button */
     .call-to-action > h2,
     .call-to-action > p {
         flex: 0 1 auto; /* allow wrapping but do not force expansion */
-        text-align: left;
-        width: 100%;
+        text-align: center;
+        width: auto;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* Ensure the donate button sits below the text and cannot overlap adjacent
@@ -280,11 +291,12 @@ body {
        normal flow. */
     .call-to-action > .donate-button {
         flex: 0 0 auto;
-        align-self: flex-start; /* keep button aligned with text start */
+        align-self: center; /* center the button under the text */
         position: relative;
         z-index: 1; /* keep button above subtle backgrounds but inside flow */
-        margin-top: 4px;
-        max-width: 320px; /* keep a reasonable max width */
-        width: auto;
+        margin-top: 8px;
+        max-width: 360px; /* keep a reasonable max width */
+        width: 100%;        /* allow button to be responsive */
+        box-sizing: border-box;
     }
 }
