@@ -7,20 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <section class="logo">
+            <a href="/" aria-label="charity water home">
+                <img src="assets/cw_logo-2.png" alt="charity water logo" class="site-logo" />
+            </a>
+        </section>
     <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>A World Where Clean Water Is a Right, Not a Privilege.</h1>
-        <!-- Subheadline -->
-        <p>Everyone deserves clean water. Together, we’re making
-it possible — one community, one life-changing well at a time.</p>
+    <section class="hero" aria-label="Hero with headline and call to action">
+        <!-- Use a simple inner wrapper to help center content vertically -->
+        <div class="hero-inner">
+            <!-- Main headline (centered) -->
+            <h1>A World Where Clean Water Is a Right, Not a Privilege.</h1>
+            <!-- Subheadline (centered) -->
+            <p class="hero-sub">Everyone deserves clean water. Together, we’re making it possible — one community, one life-changing well at a time.</p>
+        </div>
     </section>
 
     <!-- Story Section: This tells the story of the nonprofit -->
     <section class="story">
         <h2>Our Story</h2>
         <p>
-         
+            <!-- Placeholder text for the story section -->
+            Our mission is to provide clean and safe drinking water to people in developing countries. We believe that access to clean water is a fundamental human right.
+        </p>
     </section>
 
     <!-- Real-World Impact Story Section -->
@@ -29,8 +38,20 @@ it possible — one community, one life-changing well at a time.</p>
         <h2>Real Impact: Meet Amina</h2>
         <!-- Container for image and text -->
         <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://cdn2.dropmarkusercontent.com/52043/d910e28c564617bfe51ca82a2cc7e15c94a0675c19b954d5af224ceb63909725/JS_20170803_2360.jpg?Expires=1760680805&Signature=XJH-mFPl7GsXxwpBqJkaJHtLAggNSwHD3OTVbII0zo1IXXPp5BpGBvWgOwWdHSm8LOztnzapUyyJZ0rRFGsc8-JYiDRDVnNlhNKjD2EVqgXgXB9PJgOIHQTi9KjDyt1WMcPB0ayiXPYR14GlFsCcmX1N3Dn4d-WbykJlOKNmJR178RjVz4I0K1SPMZ6SpmG0sLfNaLq8dIjP2ptgsp2~c1VOTGQg8curc57kI4eAF4m0ewt1r0lziqpMNpric-zH0~BBMeNo-3DMb4Yc70~97~jCpf4Jb~KYyRe2At2KzTDBiGs8cV81Hp~15PiSNf-b12wgkdqn5Wu50~OPj-qKUA__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ" alt="Amina smiling with clean water" class="impact-image">
+            <!--
+              Changed code: add a linked image that represents Amina.
+              - The image src uses Unsplash's "source" endpoint to return a relevant photo (african, woman, well).
+              - The image is wrapped in a link to the Unsplash search page so visitors can view source images.
+              - target="_blank" opens the source in a new tab and rel="noopener noreferrer" is a security best-practice.
+              - Alt text is descriptive for screen readers.
+            -->
+                                    <figure>
+                                        <a href="assets/amina.jpg" target="_blank" rel="noopener noreferrer" title="Open full-size Amina photo">
+                                            <img loading="lazy" src="assets/amina.jpg" alt="Amina, a woman in an African village, smiling beside a newly installed community water well; outdoor rural setting, hopeful mood" class="impact-image" />
+                                        </a>
+                                        <figcaption class="image-credit">Photo: courtesy of charity: water; opens full-size in a new tab</figcaption>
+                                    </figure>
+
             <!-- Impact story text -->
             <p>
                 Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
