@@ -9,6 +9,36 @@ body, h1, h2, p {
     padding: 0;
 }
 
+/* Make sizing easier to reason about */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size adjustments on some mobile browsers */
+html { -webkit-text-size-adjust: 100%; }
+
+/* Make all images responsive and prevent layout shift */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Logo area */
+.logo { padding: 12px 0; text-align: center; }
+.site-logo { max-width: 220px; width: 45%; height: auto; display: block; margin: 0 auto; }
+
+/* Small utility for image captions */
+.image-credit { font-size: 0.85rem; opacity: 0.95; margin-top: 6px; }
+
+/* Accessible focus outlines for keyboard users */
+a:focus-visible, .donate-button:focus-visible {
+    outline: 3px solid #FFC907;
+    outline-offset: 3px;
+}
+
+/* Slight transition for interactive elements (respect prefers-reduced-motion) */
+@media (prefers-reduced-motion: no-preference) {
+    .donate-button { transition: background-color 160ms ease, transform 120ms ease; }
+    .donate-button:active { transform: translateY(1px); }
+}
+
 /* Set a background color and font for the entire page */
 body {
     /* Light blue background for the page */ 
