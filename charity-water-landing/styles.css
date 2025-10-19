@@ -12,7 +12,7 @@ body, h1, h2, p {
 /* Set a background color and font for the entire page */
 body {
     /* Light blue background for the page */ 
-    background-color: #2E9DF7;
+    background-color: #ffffff;
     font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif; /* Simple, clean font */
 }
 
@@ -23,8 +23,8 @@ body {
    - Use a semi-transparent overlay so text is readable on any image
 */
 .hero {
-    /* Replace this path with your real hero image later */
-    background-image: url("assets/placeholders/hero-bg.jpg");
+    /* Hero background image (stored locally to avoid link expiry) */
+    background-image: url("assets/hero.jpg");
     background-size: cover;         /* Make the image cover the whole area */
     background-position: center;    /* Center the image */
     background-repeat: no-repeat;
@@ -86,13 +86,14 @@ body {
 .story {
     padding: 20px; /* Padding for spacing */
     background-color: #FFC907; /* White background */
-    text-align: left; /* Center align text */
+    text-align: center; /* Center text on all sizes */
 }
 
 /* Style for the impact story section */
 .impact-story {
     padding: 20px; /* Padding for spacing */
     background-color: #4FCB53; /* Light gray background */
+    text-align: center; /* Center content */
 }
 
 /* Style for the impact content container */
@@ -112,8 +113,31 @@ body {
 .call-to-action {
     background-color: #159A48; /* Green background */
     color: white; /* White text color */
-    text-align: center; /* Center align text */
     padding: 20px; /* Padding for spacing */
+    /* Use flex so we can control layout responsively and avoid overlap
+       - Always stack vertically but keep items centered for a unified look */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center all CTA content */
+    gap: 12px;
+}
+
+/* Ensure heading and paragraph inside CTA behave as flexible content */
+.call-to-action > h2,
+.call-to-action > p {
+    margin: 0;
+    /* Keep text centered and full width so the button won't overlap */
+    flex: 0 1 auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* Make button behave like a separate item that doesn't expand */
+.call-to-action > .donate-button {
+    flex: 0 0 auto;
+    align-self: center; /* ensure button stays centered and below text */
+    max-width: 360px;   /* reasonable button width */
+    width: auto;
 }
 
 /* Style for the donate button */
@@ -128,4 +152,139 @@ body {
 /* Change button color on hover */
 .donate-button:hover {
     background-color: #FFC907; /* Darker yellow on hover */
+}
+
+/* ----------------------------------------------------------------------
+   Responsive media queries
+
+   Media queries let us apply different CSS rules depending on the
+   viewport width. We use them so the page is readable and usable on
+   phones, tablets, and desktop screens without changing the HTML.
+
+   - max-width: 600px  -> Phones / small devices
+   - min-width: 601px  -> Small tablets & landscape phones
+   - min-width: 1025px -> Large tablets & desktops
+---------------------------------------------------------------------- */
+
+/* Phones: stack content vertically, make buttons easy to tap */
+@media (max-width: 600px) {
+    .hero {
+        padding: 24px 12px;    /* Less padding so content fits */
+        min-height: 40vh;      /* Use less vertical space on small screens */
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;     /* Smaller headline for phones */
+    }
+
+    .hero-sub {
+        font-size: 0.95rem;    /* Readable subheadline */
+        max-width: 320px;      /* Prevent super long lines */
+    }
+
+    .story {
+        text-align: center;    /* Center on phones for simpler layout */
+        padding: 16px;
+    }
+
+    .impact-content {
+        flex-direction: column; /* Stack image and text */
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .impact-image {
+        max-width: 90%;        /* Make image smaller on phones */
+        height: auto;
+    }
+
+    .donate-button {
+        display: block;        /* Make CTA full width to be easy to tap */
+        width: 100%;
+        box-sizing: border-box; 
+        padding: 14px 18px;
+        font-size: 1rem;
+    }
+}
+
+/* Small tablets and large phones: allow side-by-side impact content */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.2rem;     /* Medium headline */
+    }
+
+    .impact-content {
+        flex-direction: row;   /* Place image and text side-by-side */
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 12px 24px;
+    }
+
+    .impact-image {
+        max-width: 320px;      /* Fixed-ish image size on tablets */
+        width: 40%;
+    }
+
+    .story {
+        padding: 20px 24px;
+    }
+}
+
+/* Desktops and large screens: increase spacing and type scale */
+@media (min-width: 1025px) {
+    .hero {
+        min-height: 65vh;      /* Taller hero on larger screens */
+        padding: 60px 40px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;       /* Larger headline for desktops */
+    }
+
+    .impact-content {
+        max-width: 1000px;     /* Limit content width for readability */
+        margin: 0 auto;
+        gap: 36px;
+    }
+
+    .impact-image {
+        width: 360px;          /* Larger illustrative image */
+    }
+
+    .story {
+        padding: 28px 32px;
+    }
+
+    /* Keep CTA vertical on large screens as well (heading, paragraph, button)
+       — this ensures the "Make a Difference" section stays stacked and
+       prevents horizontal overlap across layouts. We left-align text for
+       readability on wide screens, but preserve vertical stacking. */
+    .call-to-action {
+        /* continue using column so items always stack */
+        flex-direction: column;
+        align-items: flex-start; /* left-align children on large screens */
+        gap: 18px;
+    }
+
+    /* CTA text should remain left-aligned and not try to grow into the button */
+    .call-to-action > h2,
+    .call-to-action > p {
+        flex: 0 1 auto; /* allow wrapping but do not force expansion */
+        text-align: left;
+        width: 100%;
+    }
+
+    /* Ensure the donate button sits below the text and cannot overlap adjacent
+       content — use a stable size and a relative position so it participates in
+       normal flow. */
+    .call-to-action > .donate-button {
+        flex: 0 0 auto;
+        align-self: flex-start; /* keep button aligned with text start */
+        position: relative;
+        z-index: 1; /* keep button above subtle backgrounds but inside flow */
+        margin-top: 4px;
+        max-width: 320px; /* keep a reasonable max width */
+        width: auto;
+    }
 }

@@ -32,6 +32,22 @@ body {
   color: #222;
 }
 
+/* Logo styling: keeps the logo a reasonable size and adds spacing */
+.site-logo{
+  max-width: 160px;
+  height: auto;
+  display: inline-block;
+  margin: 8px 0 0 8px;
+}
+
+/* Image credit (figcaption) styling */
+.image-credit{
+  font-size: 0.85rem;
+  color: #6b7a80;
+  margin-top: 8px;
+}
+.image-credit a{ color: #2E9DF7; text-decoration: underline; }
+
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
   background: #fff; /* White background for sections */
@@ -187,7 +203,7 @@ section {
     align-items: center;     /* Vertically center items */
     justify-content: center; /* Center the whole group */
     gap: 28px;               /* Space between image and text */
-    text-align: left;
+    text-align: center;
     max-width: 800px;
     margin: 0 auto;
   }

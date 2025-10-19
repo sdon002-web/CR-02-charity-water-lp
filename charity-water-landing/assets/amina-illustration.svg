@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Simple, beginner-friendly SVG illustration representing "Amina".
+  This is an original, stylized vector illustration intended as a placeholder
+  (not a photo). It is safe to use and freely editable.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration of Amina</title>
+  <desc id="desc">A friendly, colorful vector portrait of a woman named Amina beside a water well — simplified shapes and warm colors.</desc>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f7fbfb" />
+
+  <!-- Simple horizon -->
+  <rect y="520" width="1200" height="280" fill="#e6f6f5" />
+
+  <!-- Well base -->
+  <rect x="760" y="500" width="200" height="120" rx="8" fill="#d9eef0" stroke="#b7e0de" stroke-width="3" />
+  <rect x="780" y="560" width="160" height="60" fill="#cfe6e6" />
+
+  <!-- Amina body (stylized) -->
+  <!-- Head -->
+  <circle cx="360" cy="360" r="84" fill="#f6d0b1" />
+  <!-- Hair -->
+  <path d="M300 330 C280 300, 320 240, 380 250 C420 260, 420 320, 360 350 Z" fill="#2b2b2b" />
+  <!-- Body -->
+  <rect x="300" y="420" width="120" height="160" rx="12" fill="#ff8a4b" />
+  <!-- Scarf / shawl -->
+  <path d="M300 430 Q360 380 420 430 L420 520 Q360 470 300 520 Z" fill="#ffd57e" opacity="0.95" />
+  <!-- Smile -->
+  <path d="M335 370 Q360 390 385 370" stroke="#6b3a2a" stroke-width="4" fill="none" stroke-linecap="round" />
+  <!-- Eyes -->
+  <circle cx="345" cy="350" r="6" fill="#2b2b2b" />
+  <circle cx="375" cy="350" r="6" fill="#2b2b2b" />
+
+  <!-- Water droplets near well -->
+  <g fill="#0aa5a2">
+    <path d="M860 460 C856 452, 848 452, 844 460 C840 468, 848 480, 860 480 C872 480, 880 468, 860 460 Z" />
+    <path d="M900 440 C896 432, 888 432, 884 440 C880 448, 888 460, 900 460 C912 460, 920 448, 900 440 Z" opacity="0.9" />
+  </g>
+
+  <!-- Ground shadow -->
+  <ellipse cx="360" cy="620" rx="160" ry="24" fill="#d8eae9" />
+
+  <!-- Name label -->
+  <rect x="260" y="480" width="200" height="40" rx="8" fill="#ffffff" opacity="0.9" />
+  <text x="360" y="510" font-family="Montserrat, system-ui, Arial" font-size="18" fill="#0d2636" text-anchor="middle">Amina</text>
+
+  <!-- Decorative sun -->
+  <circle cx="980" cy="120" r="60" fill="#ffd57e" opacity="0.95" />
+
+</svg>
