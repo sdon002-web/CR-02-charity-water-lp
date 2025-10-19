@@ -1,0 +1,131 @@
+/* 
+This CSS file contains styles for the Charity Water Landing Page. 
+It includes styles for the hero section, story section, impact story section, and call-to-action section.
+*/
+
+/* Basic reset for margins and paddings */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font for the entire page */
+body {
+    /* Light blue background for the page */ 
+    background-color: #2E9DF7;
+    font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif; /* Simple, clean font */
+}
+
+/* Style for the hero section
+   - Full-width background image
+   - Cover the area and stay centered
+   - Center headline and subheadline both horizontally and vertically
+   - Use a semi-transparent overlay so text is readable on any image
+*/
+.hero {
+    /* Replace this path with your real hero image later */
+    background-image: url("assets/placeholders/hero-bg.jpg");
+    background-size: cover;         /* Make the image cover the whole area */
+    background-position: center;    /* Center the image */
+    background-repeat: no-repeat;
+    min-height: 60vh;               /* Make hero take up most of the viewport height */
+    display: flex;                  /* Use flexbox to center content (beginner friendly) */
+    align-items: center;            /* Vertical centering */
+    justify-content: center;        /* Horizontal centering */
+    color: #ffffff;                 /* White text for contrast */
+    position: relative;             /* So overlay can be positioned */
+    padding: 40px 20px;             /* Space inside the hero */
+    text-align: center;             /* Center text */
+}
+
+/* Simple dark overlay to improve text readability on bright images */
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.35); /* semi-transparent black */
+    pointer-events: none;         /* Allow clicks through the overlay */
+}
+
+/* Inner wrapper must be above the overlay */
+.hero-inner {
+    position: relative;
+    z-index: 1;                   /* Bring text above the overlay */
+    max-width: 900px;             /* Keep lines short for readability */
+    padding: 10px;
+}
+
+/* Headline styles */
+.hero h1 {
+    font-size: 2rem;              /* Beginner-friendly relative sizing */
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+/* Subheadline styles */
+.hero-sub {
+    font-size: 1.1rem;
+    margin: 0 auto;               /* Keep it centered */
+    max-width: 700px;
+}
+
+/* Make hero text larger on wider screens (simple responsive tweak) */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero-sub {
+        font-size: 1.25rem;
+    }
+}
+
+/* Style for the story section */
+.story {
+    padding: 20px; /* Padding for spacing */
+    background-color: #FFC907; /* White background */
+    text-align: left; /* Center align text */
+}
+
+/* Style for the impact story section */
+.impact-story {
+    padding: 20px; /* Padding for spacing */
+    background-color: #4FCB53; /* Light gray background */
+}
+
+/* Style for the impact content container */
+.impact-content {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+}
+
+/* Style for the impact image */
+.impact-image {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the call-to-action section */
+.call-to-action {
+    background-color: #159A48; /* Green background */
+    color: white; /* White text color */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Padding for spacing */
+}
+
+/* Style for the donate button */
+.donate-button {
+    background-color: #FF902A; /* Yellow background for button */
+    color: black; /* Black text color */
+    padding: 10px 20px; /* Padding for button */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Change button color on hover */
+.donate-button:hover {
+    background-color: #FFC907; /* Darker yellow on hover */
+}

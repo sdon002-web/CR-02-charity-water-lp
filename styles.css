@@ -45,7 +45,7 @@ section {
 .hero {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  background-image: url('https://cdn2.dropmarkusercontent.com/52043/d910e28c564617bfe51ca82a2cc7e15c94a0675c19b954d5af224ceb63909725/JS_20170803_2360.jpg?Expires=1760680805&Signature=XJH-mFPl7GsXxwpBqJkaJHtLAggNSwHD3OTVbII0zo1IXXPp5BpGBvWgOwWdHSm8LOztnzapUyyJZ0rRFGsc8-JYiDRDVnNlhNKjD2EVqgXgXB9PJgOIHQTi9KjDyt1WMcPB0ayiXPYR14GlFsCcmX1N3Dn4d-WbykJlOKNmJR178RjVz4I0K1SPMZ6SpmG0sLfNaLq8dIjP2ptgsp2~c1VOTGQg8curc57kI4eAF4m0ewt1r0lziqpMNpric-zH0~BBMeNo-3DMb4Yc70~97~jCpf4Jb~KYyRe2At2KzTDBiGs8cV81Hp~15PiSNf-b12wgkdqn5Wu50~OPj-qKUA__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ');
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
@@ -62,7 +62,7 @@ section {
 
 /* Make the headline bold and modern */
 .hero h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -71,7 +71,7 @@ section {
 
 /* Style the subheadline */
 .hero p {
-  font-size: 1.2em;
+  font-size: 2em;
   margin-top: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
